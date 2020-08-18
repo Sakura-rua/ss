@@ -18,10 +18,10 @@ Ubuntu 12+
 
 ```markdown
 
-###### Centos
+**Centos**
 yum -y install git
 
-####### Debian
+**Debian**
 apt-get update && apt-get -y install git  
   
 git clone https://github.com/Sakura-rua/ss.git  
