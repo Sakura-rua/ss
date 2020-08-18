@@ -3,9 +3,6 @@
 
 一键脚本搭建shadowsocks/shadowsocksR/V2Ray + 设置开启自启动 + 升级内核&开启bbr加速。
 
-## 教程如何访问
-
-[Suniceman小站](https://suniceman.com/2019/04/10/install-shadowsocks-in-one-command/)
 
 ## 支持系统
 
@@ -17,31 +14,31 @@ Ubuntu 12+
 
 ## 使用教程
 
-一键搭建ss/ssr：[一键脚本搭建shadowsocks+开启bbr](https://suniceman.com/2019/04/10/install-shadowsocks-in-one-command/)
+#### 一键搭建ss/ssr
 
-## 推荐的VPS
+```markdown
 
-### 国外VPS
+Centos  
+yum -y install git
+  
+Debian  
+apt-get update && apt-get -y install git  
+  
+git clone https://github.com/Sakura-rua/ss.git  
+  
+一键搭建ss脚本  
+ss/ss.sh -i password port  
+  
+卸载ss  
+ss/ss.sh -uninstall
 
-[Vultr优惠网](https://www.vultryhw.cn/)
+相关ss操作  
+启动：/etc/init.d/ss start  
+停止：/etc/init.d/ss stop  
+重启：/etc/init.d/ss restart  
+状态：/etc/init.d/ss status  
+查看ss链接：ss/ss.sh -sslink  
+修改配置文件：vim /etc/shadowsocks.json
 
-[搬瓦工优惠网](https://www.bwgyhw.cn/)
-
-### 国内VPS
-
-[阿里云优惠网](https://www.aliyunyhw.com)
-
-[腾讯云优惠网](https://www.tengxunyunyhw.com)
-
-### VPS信息汇总
-
-[VPS GO](https://www.vpsgo.com)
-
-### 交流、客户端下载、加入交流讨论群（备注ss-fly否则不通过） 
- [![VCRQv4.th.jpg](https://s2.ax1x.com/2019/05/23/VCRQv4.th.jpg)](https://imgchr.com/i/VCRQv4)
-
-
-### 感谢支持
-
-如果喜欢的话可以帮忙点个 `star` 感谢支持 
+```
 

@@ -1,7 +1,7 @@
 #!/bin/bash
 
 ### BEGIN INIT INFO
-# Provides:          suniceman.com
+# Provides:          Sakura
 # Required-Start:    $network $syslog
 # Required-Stop:     $network
 # Default-Start:     2 3 4 5
@@ -64,7 +64,7 @@ do_status(){
     if [ $? -eq 0 ]; then
         echo "$NAME (pid $PID)正在运行"
     else
-        echo "$NAME未运行。可以执行/etc/init.d/ss-fly start启动ss"
+        echo "$NAME未运行。可以执行/etc/init.d/ss start启动ss"
         RETVAL=1
     fi
 }

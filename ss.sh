@@ -70,10 +70,10 @@ uninstall_ss() {
                 fi
                 case $os in
                         'ubuntu'|'debian')
-                                update-rc.d -f ss-fly remove
+                                update-rc.d -f ss remove
                                 ;;
                         'centos')
-                                chkconfig --del ss-fly
+                                chkconfig --del ss
                                 ;;
                 esac
                 rm -f /etc/shadowsocks.json
@@ -426,15 +426,15 @@ install() {
         python setup.py install --record /usr/local/shadowsocks_install.log
         if [ -f /usr/bin/ssserver ] || [ -f /usr/local/bin/ssserver ]
         then
-                cp $fly_dir/ss-fly /etc/init.d/
-                chmod +x /etc/init.d/ss-fly
+                cp $fly_dir/ss /etc/init.d/
+                chmod +x /etc/init.d/ss
                 case $os in
                         'ubuntu'|'debian')
-                                update-rc.d ss-fly defaults
+                                update-rc.d ss defaults
                                 ;;
                         'centos')
-                                chkconfig --add ss-fly
-                                chkconfig ss-fly on
+                                chkconfig --add ss
+                                chkconfig ss on
                                 ;;
                 esac
                 ssserver -c /etc/shadowsocks.json -d start
@@ -448,7 +448,6 @@ install() {
         echo -e "你的密码            ：\033[41;37m ${password} \033[0m"
         echo -e "你的端口            ：\033[41;37m ${port} \033[0m"
         echo -e "你的加密方式        ：\033[41;37m aes-256-cfb \033[0m"
-        echo -e "欢迎访问Suniceman小站   ：\033[41;37m http://suniceman.com \033[0m"
         get_ss_link
 }
 
@@ -488,7 +487,7 @@ case $1 in
 		exit 0;
 		;;
 	-v|v|version )
-		echo 'ss-fly Version 1.0, 2019-04-10, Copyright (c) 2019 Suniceman'
+		echo 'ss Version 1.0, 2019-04-10, Copyright (c) 2019 Suniceman'
 		exit 0;
 		;;
 esac
